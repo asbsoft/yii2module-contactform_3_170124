@@ -1,0 +1,24 @@
+{
+    "name": "asbsoft/yii2module-contactform_3_170124",
+    "version": "3.*",
+    "description": "Simple Yii2 contact form. Template of standard module collected in vendor place.",
+    "keywords": ["yii2"],
+    "type": "yii2-module",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Alexandr Belogolovsky",
+            "email": "ab2014box@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "yiisoft/yii2": "~2.0.10",
+        "asbsoft/yii2-common": ">=1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "asb\\yii2\\modules\\contactform_3_170124\\": ""
+        }
+    }
+}
