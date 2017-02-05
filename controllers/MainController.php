@@ -2,7 +2,8 @@
 
 namespace asb\yii2\modules\contactform_3_170124\controllers;
 
-use yii\web\Controller as BaseController;
+//use yii\web\Controller as BaseController;
+use asb\yii2\controllers\BaseController;
 
 use asb\yii2\modules\contactform_3_170124\models\Contactform;
 
