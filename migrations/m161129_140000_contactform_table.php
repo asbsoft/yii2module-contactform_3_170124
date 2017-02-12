@@ -20,7 +20,7 @@ class m161129_140000_contactform_table extends Migration
     {
         parent::init();
 
-        Yii::setAlias('@asb/yii2/modules', '@vendor/asb/yii2modules');
+        Yii::setAlias('@asb/yii2/modules', '@vendor/asbsoft/yii2module');
 
         $this->tableName = Model::tableName();
         $this->idxNamePrefix = 'idx-' . $this->tableName;

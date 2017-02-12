@@ -1,6 +1,6 @@
 <?php
 
-    use asb\yii2\base\UniApplication;
+    use asb\yii2\common_2_170212\base\UniApplication;
     use asb\yii2\modules\contactform_3_170124\controllers\AdminController;
 
     //use yii\rest\UrlRule as RestUrlRule;

@@ -3,13 +3,11 @@
 namespace asb\yii2\modules\contactform_3_170124\controllers;
 
 //use yii\web\Controller as BaseController;
-use asb\yii2\controllers\BaseController;
-
+use asb\yii2\common_2_170212\controllers\BaseController;
 use asb\yii2\modules\contactform_3_170124\models\Contactform;
 
-use yii\captcha\CaptchaAction;
-
 use Yii;
+use yii\captcha\CaptchaAction;
 
 class MainController extends BaseController
 {

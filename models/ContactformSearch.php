@@ -2,10 +2,11 @@
 
 namespace asb\yii2\modules\contactform_3_170124\models;
 
+use asb\yii2\modules\contactform_3_170124\models\Contactform;
+
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use asb\yii2\modules\contactform_3_170124\models\Contactform;
 
 /**
  * ContactformSearch represents the model behind the search form about
