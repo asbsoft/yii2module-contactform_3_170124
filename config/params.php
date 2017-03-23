@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'label'   => 'Contact form 3',
+    'label'   => 'Contact form v3',
     'version' => '3.170124',
     'origin'  => 'contactform_3_170124',
 

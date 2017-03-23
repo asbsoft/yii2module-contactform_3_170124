@@ -8,7 +8,7 @@
 
     /** Default module config */
     return [
-        'params' => include(__DIR__ . '/params.php'),
+        //'params' => include(__DIR__ . '/params.php'),
 
         'routesConfig' => [ // type => prefix | array(config)
             'main'  => [
@@ -21,7 +21,7 @@
                                  : (AdminController::$adminPath === '' ? '' : (AdminController::$adminPath . '/'))
                                    . 'contactform-back',
                 'startLink' => [
-                    'label' => 'Contactform messages',
+                    'label' => 'Contactform messages v3',
                   //'link'  => '', // default
                     'action' => 'admin/index',
                 ],

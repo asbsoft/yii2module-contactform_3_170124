@@ -2,6 +2,7 @@
 //ru
 return [
 // start links
+    'Contact form v3'   => 'Форма обратной связи v3', // label
     'Contact us'        => "Связаться с нами",
     'Contacts API'      => "API обратной связи",
     'Contactform messages'
