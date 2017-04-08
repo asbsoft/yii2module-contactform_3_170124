@@ -19,6 +19,8 @@ trait UserFormatterTrait
     public function asUsername($id)
     {
         $tc = BackendModule::$tc;
+        if (empty($tc)) $tc = CommonModule::$tc;
+
         $userIdentity = Yii::$app->user->identity;
         $usernameField = UserModel::$usernameField;
         if (empty(self::$_users[$id])) {
