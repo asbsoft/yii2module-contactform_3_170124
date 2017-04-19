@@ -28,6 +28,11 @@ class m161129_140000_contactform_table extends Migration
 
     public function safeUp()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        }
         $this->createTable($this->tableName, [
             'id'        => $this->primaryKey(),
             'name'      => $this->string(255)->notNull(),
@@ -38,7 +43,7 @@ class m161129_140000_contactform_table extends Migration
             'ip'        => $this->string(255),
             'browser'   => $this->string(255),
             'create_at' => $this->timestamp(),
-        ]);
+        ], $tableOptions);
         //$this->createIndex("{$this->idxNamePrefix}-user-id",  $this->tableName, 'user_id');
     }
 

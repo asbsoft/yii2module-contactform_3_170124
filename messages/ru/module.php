@@ -7,6 +7,8 @@ return [
     'Contacts API'      => "API обратной связи",
     'Contactform messages'
                         => "Сообщения обратной связи",
+    'Contactform messages v3'
+                        => "Сообщения обратной связи v3",
 
     'Contact form'      => 'Форма обратной связи',
     'Please fill out the following form to contact us'
