@@ -17,3 +17,5 @@ In your application configs must be some tunes:
 * in bootstrap:
     AdminController::$adminPath = Yii::$app->params['adminPath'];
 Default is AdminController::$adminPath = 'admin'.
+
+Now only one such module or it's successor can add to system.

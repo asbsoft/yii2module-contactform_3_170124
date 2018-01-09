@@ -58,8 +58,8 @@ class Contactform extends ActiveRecord
 
         $module = FrontendModule::getInstance();
         if (empty($module)) $module = BackendModule::getInstance();
-        if (empty($module)) $module = CommonModule::getInstance();
-
+        if (empty($module)) $module = CommonModule::getInstance(); //?! Find only first module of this class among system modules.
+                                                                   // therefore only one such module or it's successor can add to system
         if (!empty($module)) {
             $moduleUid = $module->uniqueId;
             $this->tc = $module->tcModule;
