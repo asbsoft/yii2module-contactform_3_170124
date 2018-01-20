@@ -19,3 +19,12 @@ In your application configs must be some tunes:
 Default is AdminController::$adminPath = 'admin'.
 
 Now only one such module or it's successor can add to system.
+
+Contact form can be used inside other web page by AJAX, for example:
+```php
+      <div id="<?= $contactFormTagId ?>">
+          <?= Yii::$app->runAction("/{$contactsModuleUid}/main/form", [
+              'ajaxReceiver' => $contactFormTagId,
+          ]) ?>
+      </div>
+```

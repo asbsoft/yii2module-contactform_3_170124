@@ -22,7 +22,7 @@ class MainController extends BaseController
         parent::init();
 
         $module = $this->module;
-        $this->tc = $this->tc = $module->tcModule;
+        $this->tc = $module->tcModule;
     }
 
     public function actions()
@@ -44,21 +44,37 @@ class MainController extends BaseController
         return $this->redirect(['form']);
     }
 
-    public function actionForm()
+    /**
+     * @param string|false $ajaxReceiver id of DOM-element for receive AJAX responce
+     */
+    public function actionForm($ajaxReceiver = false)
     {
+        $message = '';
+        $isAjax = Yii::$app->request->isAjax;
         $model = new Contactform();
         $model->scenario = $model::SCENARIO_FRONTFORM;
 
-        if ($model->load(Yii::$app->request->post()))
+        $post = Yii::$app->request->post();
+        if ($model->load($post))
         {
             $result = $model->validate();
             if($result && $model->save(false)) {
-                Yii::$app->session->setFlash('contactFormSubmitted');
-                return $this->refresh();
+                $message = Yii::t($this->tc, 'Thank you for contacting us');
+                if (!$isAjax) {
+                    Yii::$app->session->setFlash('contactFormSubmitted');
+                    return $this->refresh();
+                }
             }
         }
-        return $this->render('contact', [
+        if ($isAjax) {
+            $ajaxReceiver = $post['ajax-receiver'];
+        }
+        
+        $render = $ajaxReceiver ? 'renderAjax' : 'render';
+        return $this->$render('contact', [
             'model' => $model,
+            'ajaxReceiver' => $ajaxReceiver,
+            'message' => $message,
         ]);
     }
 
