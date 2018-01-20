@@ -60,7 +60,7 @@
 
                 <?php $form = ActiveForm::begin([
                     'id' => $contactFormId,
-                    'enableClientValidation' => false, // turn off JS-validation: CAPTCHA JS-validation problem
+                  //'enableClientValidation' => false, // turn off JS-validation
                 ]); ?>
 
                     <?php if ($ajaxReceiver) echo Html::hiddenInput('ajax-receiver', $ajaxReceiver); ?>
