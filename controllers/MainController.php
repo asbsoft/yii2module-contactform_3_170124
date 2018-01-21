@@ -70,7 +70,7 @@ class MainController extends BaseController
             $ajaxReceiver = $post['ajax-receiver'];
         }
         
-        $render = $ajaxReceiver ? 'renderAjax' : 'render';
+        $render = $ajaxReceiver ? ($isAjax ? 'renderAjax' : 'renderPartial') : 'render';
         return $this->$render('contact', [
             'model' => $model,
             'ajaxReceiver' => $ajaxReceiver,
