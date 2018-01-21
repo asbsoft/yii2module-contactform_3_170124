@@ -129,8 +129,12 @@
     if ($ajaxReceiver) {
         $this->registerJs("
             var submitted = false;
+            var valid = false;
+            jQuery('#{$contactFormId}').bind('beforeSubmit', function (e) {
+                valid = true;
+            });
             jQuery('#{$contactFormId}').bind('submit', function(event) {
-                if (submitted) {
+                if (submitted || !valid) {
                     return false;
                 }
                 submitted = true;  // to avoid form be submitted twice
