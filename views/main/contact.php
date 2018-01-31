@@ -116,10 +116,13 @@
 
     $this->registerJs("
         jQuery(document).ready(function() {
+            setTimeout(function () {
+                jQuery('#{$submitCaptchaLoaderId}').hide(); // always hide by timeout
+            }, 9000);
             jQuery('#{$submitCaptchaLoaderId}').show();
         });
-        jQuery('#{$captchaImgId}').bind('load', function() {
-            jQuery('#{$submitCaptchaLoaderId}').remove();
+        jQuery('#{$captchaImgId}').bind('load', function() { // sometimes not run
+            jQuery('#{$submitCaptchaLoaderId}').hide();
         });
         jQuery('#{$captchaImgId}').bind('click', function() {
             jQuery('#{$captchaImgId}').attr('src', '{$commonAsset->baseUrl}/img/wait.gif');
