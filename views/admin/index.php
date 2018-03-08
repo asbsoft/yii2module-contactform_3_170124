@@ -4,7 +4,6 @@
 /* @var $searchModel asb\yii2\modules\contactform_3_170124\models\ContactformSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-    use asb\yii2\modules\contactform_3_170124\assets\AdminAsset;
     use asb\yii2\modules\contactform_3_170124\helpers\Formatter;
     use asb\yii2\modules\contactform_3_170124\models\UserModel;
 
@@ -12,7 +11,8 @@
     use yii\grid\GridView;
     use yii\helpers\ArrayHelper;
 
-    $assets = AdminAsset::register($this);
+
+    $assets = $this->context->module->registerAsset('AdminAsset', $this); // inherited
 
     $module = $this->context->module;
     $tc = $module->tcModule;

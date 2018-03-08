@@ -35,4 +35,8 @@
                 ],
             ],
         ],
+        /** Inherited asset(s) */
+        'assets' => [ // alias => class name
+            'AdminAsset' => 'asb\yii2\modules\contactform_3_170124\assets\AdminAsset',
+        ],
     ];
